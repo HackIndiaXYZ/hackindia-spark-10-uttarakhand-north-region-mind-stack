@@ -72,12 +72,40 @@ Copy `StudyGenie_Backend/backend/.env.example` to `.env` in the same directory. 
 
 Never commit the real `.env`, API keys, or service-role key. Only the public Supabase URL and anon key are exposed to the browser.
 
-## Demo and team
+## Team — MIND STACK
 
-- Team: **MIND STACK**
-- Team member names and roles: not supplied in this package; add before final submission.
-- Hosted demo and demo video: no verified URLs supplied. Follow the local setup above.
-- Screenshots: not included. Add real screenshots under `docs/screenshots/` and link them here before final submission.
+StudyGenie was developed by **MIND STACK** for HackIndia Spark 10 — Uttarakhand North Region.
+
+### Team Members
+
+- Vanshika Dhami
+- Gaurav Parihar
+- Harshit Nainwal
+- Sakshi Bargali
+
+## Core Learning Flow
+
+YouTube Lecture  
+↓  
+Transcript / Speech-to-Text  
+↓  
+Notes & Study Material  
+↓  
+Quiz  
+↓  
+Smart Revision  
+↓  
+Re-test  
+↓  
+Track Improvement
+
+## Key USP
+
+StudyGenie does more than generate notes or quizzes.
+
+After a quiz, it analyzes the student's incorrect answers, identifies the concepts that need revision, creates focused Smart Revision material from the lecture, and allows the student to re-test those concepts.
+
+**We don't just tell students what they got wrong — we help them understand what to learn next.**
 
 Use [PRESENTATION_CHECKLIST.md](PRESENTATION_CHECKLIST.md) to rehearse the demo.
 
