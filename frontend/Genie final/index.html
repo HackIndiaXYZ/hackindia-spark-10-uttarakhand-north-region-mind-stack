@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyGenie — AI Study Platform</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("studygenieTheme") || "light";
+          document.documentElement.dataset.theme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  <link rel="stylesheet" href="css/refined.css">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<script defer src="js/ui.js"></script>
+</head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+    <header class="navbar" id="navbar">
+      <a class="brand" href="index.html"
+        ><img class="brand-mark" src="assets/logo-mark.svg" width="38" height="38" alt=""> StudyGenie</a
+      >
+      <nav>
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" id="themeToggle" title="Toggle theme">
+          ☾
+        </button>
+        <a class="login-btn" href="login.html">Login</a>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn">☰</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">✦ AI-POWERED STUDY PLATFORM</div>
+          <h1>
+            Turn every lecture into<br /><span>a smarter way to study.</span>
+          </h1>
+          <p>
+            StudyGenie transforms lectures into structured study material,
+            helping students learn faster, practice smarter and prepare for
+            exams.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="login.html"
+              >Start Learning <span>→</span></a
+            >
+            <a class="secondary-btn" href="#features">Explore Features</a>
+          </div>
+          <div class="animated-feature" aria-live="polite">
+            <span class="feature-dot">✦</span
+            ><span id="featureText">Structured Notes</span>
+            <div class="feature-progress"><i id="featureProgress"></i></div>
+          </div>
+        </div>
+
+        <div class="hero-product reveal delay-2">
+          <div class="product-window tilt-card">
+            <div class="window-top">
+              <span></span><span></span><span></span><b>✦ StudyGenie AI</b>
+            </div>
+            <div class="product-body">
+              <div class="mini-sidebar">
+                <div class="mini-logo">✦</div>
+                <i>⌂</i><i>▤</i><i>◈</i><i>◎</i>
+              </div>
+              <div class="mini-main">
+                <div class="mini-title">
+                  <div>
+                    <small>YOUR LECTURE</small>
+                    <h3>Computer Networks</h3>
+                  </div>
+                  <span class="status">AI Ready</span>
+                </div>
+                <div class="mini-cards">
+                  <div class="mini-card">
+                    <small>STRUCTURED NOTES</small><strong>24 concepts</strong>
+                    <div class="line"></div>
+                    <div class="line short"></div>
+                  </div>
+                  <div class="mini-card">
+                    <small>KEY TOPICS</small
+                    ><strong>OSI · TCP/IP · Routing</strong>
+                    <div class="chips"><em>Important</em><em>Exam</em></div>
+                  </div>
+                </div>
+                <div class="processing">
+                  <div><span>AI processing</span><strong>87%</strong></div>
+                  <div class="bar"><i></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-card float-one">
+            ▤ <b>Notes Ready</b><small>24 concepts extracted</small>
+          </div>
+          <div class="float-card float-two">
+            ◇ <b>Quiz Generated</b><small>10 practice questions</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip reveal">
+        <span>✓ Structured notes</span><span>✓ Exam-focused learning</span
+        ><span>✓ Smart revision</span>
+      </section>
+
+      <section class="section process" id="how-it-works">
+        <div class="section-head reveal">
+          <div class="eyebrow">HOW IT WORKS</div>
+          <h2>From lecture to <span>exam-ready.</span></h2>
+          <p>One simple workflow. Everything you need to study smarter.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <b>01</b>
+            <div class="process-icon">↑</div>
+            <h3>Upload</h3>
+            <p>Add your lecture, PDF, document, audio or supported video.</p>
+          </article>
+          <div class="connector"></div>
+          <article class="process-card reveal delay-1">
+            <b>02</b>
+            <div class="process-icon">✦</div>
+            <h3>Understand</h3>
+            <p>
+              AI analyzes the learning material and identifies important
+              concepts.
+            </p>
+          </article>
+          <div class="connector"></div>
+          <article class="process-card reveal delay-2">
+            <b>03</b>
+            <div class="process-icon">▤</div>
+            <h3>Generate Notes</h3>
+            <p>
+              StudyGenie creates structured notes automatically — nothing else
+              is generated yet.
+            </p>
+          </article>
+          <div class="connector"></div>
+          <article class="process-card reveal delay-3">
+            <b>04</b>
+            <div class="process-icon">◎</div>
+            <h3>Master</h3>
+            <p>
+              Generate summaries, quizzes, flashcards and smart revision
+              whenever you choose.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section features" id="features">
+        <div class="section-head reveal">
+          <div class="eyebrow">STUDY TOOLS</div>
+          <h2>Everything you need to <span>learn better.</span></h2>
+          <p>
+            Each tool stays separate, so you generate exactly what you need.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card notes reveal">
+            <div class="feature-icon">▤</div>
+            <span>01</span>
+            <h3>Smart Notes</h3>
+            <p>
+              Turn your lecture into clear, structured and exam-ready notes.
+            </p>
+            <div class="feature-preview notes-preview">
+              <div class="preview-title"></div>
+              <div></div>
+              <div></div>
+              <div class="short"></div>
+            </div>
+          </article>
+          <article class="feature-card summary reveal delay-1">
+            <div class="feature-icon">▥</div>
+            <span>02</span>
+            <h3>Summary</h3>
+            <p>Get a concise version of the lecture for fast revision.</p>
+            <div class="feature-preview summary-preview">
+              <b>KEY SUMMARY</b>
+              <p>OSI model · seven layers · protocols</p>
+              <div class="summary-line"></div>
+              <div class="summary-line short"></div>
+            </div>
+          </article>
+          <article class="feature-card mindmap reveal delay-2">
+            <div class="feature-icon">◇</div>
+            <span>03</span>
+            <h3>Mind Map</h3>
+            <p>See concepts and relationships visually at a glance.</p>
+            <div class="feature-preview mindmap-preview">
+              <span>OSI</span><i>Network</i><i>Transport</i><i>Application</i>
+            </div>
+          </article>
+          <article class="feature-card cards reveal delay-3">
+            <div class="feature-icon">▱</div>
+            <span>04</span>
+            <h3>Flashcards</h3>
+            <p>
+              Turn important concepts into interactive cards for active recall.
+            </p>
+            <div class="flip-preview">
+              What is TCP?<small>Click to flip</small>
+            </div>
+          </article>
+          <article class="feature-card quiz reveal">
+            <div class="feature-icon">ϟ</div>
+            <span>05</span>
+            <h3>Adaptive Quiz</h3>
+            <p>Test yourself and identify weak topics from your answers.</p>
+            <div class="feature-preview quiz-preview">
+              <b>03 / 10</b>
+              <p>What is the OSI model?</p>
+              <i>○ Application</i><i>○ Network</i>
+            </div>
+          </article>
+          <article class="feature-card questions reveal delay-1">
+            <div class="feature-icon">◎</div>
+            <span>06</span>
+            <h3>Important Questions</h3>
+            <p>Focus on high-value questions for exam preparation.</p>
+            <div class="feature-preview questions-preview">
+              <b>EXAM FOCUS</b>
+              <p>⭐ Explain the OSI model</p>
+              <p>⭐ TCP vs UDP</p>
+            </div>
+          </article>
+          <article class="feature-card revision reveal delay-2">
+            <div class="feature-icon">◎</div>
+            <span>07</span>
+            <h3>Smart Revision</h3>
+            <p>
+              Find weak topics, revise them and retest to measure improvement.
+            </p>
+            <div class="revision-preview">
+              <small>Personalized progress</small><strong>—</strong>
+              <div class="bar"><i></i></div>
+              <em>Builds from your quiz results</em>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workflow-demo">
+        <div class="demo-panel reveal">
+          <div class="demo-copy">
+            <div class="eyebrow">THE STUDYGENIE DIFFERENCE</div>
+            <h2>
+              It doesn't just summarize.<br /><span>It prepares you.</span>
+            </h2>
+            <p>
+              Upload once. Start with structured notes. Then choose the learning
+              tool you need — exactly when you need it.
+            </p>
+            <a class="primary-btn" href="login.html">Try StudyGenie →</a>
+          </div>
+          <div class="flow-visual">
+            <div class="flow-node active">Lecture</div>
+            <div class="flow-line"></div>
+            <div class="flow-node active">AI Analysis</div>
+            <div class="flow-line"></div>
+            <div class="flow-node active">Structured Notes</div>
+            <div class="flow-line"></div>
+            <div class="flow-node">Your Choice</div>
+            <div class="choice-row">
+              <span>Summary</span><span>Quiz</span><span>Flashcards</span
+              ><span>Revision</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <div class="cta-box reveal">
+          <div class="eyebrow">READY WHEN YOU ARE</div>
+          <h2>Study smarter.<br /><span>Prepare better.</span></h2>
+          <p>Turn your lectures into an exam-ready learning workflow.</p>
+          <a class="primary-btn" href="login.html">Start Learning →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <a class="brand" href="index.html"
+          ><img class="brand-mark" src="assets/logo-mark.svg" width="38" height="38" alt=""> StudyGenie</a
+        >
+        <p>AI-powered learning for students.</p>
+      </div>
+      <div>
+        <b>Product</b><a href="#features">Notes</a><a href="#features">Quiz</a
+        ><a href="#features">Flashcards</a><a href="#features">Revision</a>
+      </div>
+      <div>
+        <b>Company</b><a href="#how-it-works">How it works</a
+        ><a href="#">Contact</a>
+      </div>
+    </footer>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

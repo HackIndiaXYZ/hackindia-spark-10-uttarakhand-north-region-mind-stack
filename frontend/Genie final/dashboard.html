@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Dashboard — StudyGenie</title>
+    <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/workspace.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("studygenieTheme") || "light";
+          document.documentElement.dataset.theme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  <link rel="stylesheet" href="css/refined.css">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<script defer src="js/ui.js"></script>
+</head>
+  <body class="dashboard-page">
+    <header class="dashboard-nav">
+      <a class="brand" href="index.html"
+        ><img class="brand-mark" src="assets/logo-mark.svg" width="38" height="38" alt=""> StudyGenie</a
+      >
+      <div class="dash-actions">
+        <button type="button" class="icon-btn" id="dashTheme">☾</button
+        ><button type="button" class="profile-btn" id="profileBtn">
+          <span class="avatar" id="avatar">H</span
+          ><span id="profileName">Student</span>⌄
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <a href="profile.html">Profile</a><a href="settings.html">Settings</a
+          ><button type="button" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </header>
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <a class="side active" href="dashboard.html">⌂ <span>Dashboard</span></a
+        ><a class="side" href="#notes">▤ <span>Notes</span></a
+        ><a class="side" href="#summary">◫ <span>Summary</span></a
+        ><a class="side" href="#flashcards">▱ <span>Flashcards</span></a
+        ><a class="side" href="#mindmap">⌘ <span>Mind Map</span></a
+        ><a class="side" href="#quiz">◇ <span>Quiz</span></a
+        ><a class="side" href="#questions"
+          >◎ <span>Important Questions</span></a
+        ><a class="side" href="#chat">◌ <span>Chat with Lecture</span></a
+        ><a class="side" href="#weakTopics">↗ <span>Weak Topics</span></a><a class="side" href="#revision">✦ <span>Smart Revision</span></a
+        ><a class="side" href="#retest">↻ <span>Re-test</span></a
+        ><a class="side" href="settings.html">⚙ <span>Settings</span></a>
+      </aside>
+      <main class="dash-main">
+        <div class="welcome">
+          <div>
+            <div class="eyebrow">YOUR LEARNING SPACE</div>
+            <h1>
+              <span id="welcomeGreeting">Good morning</span>,
+              <span id="welcomeName">Student</span> 
+            </h1>
+            <p>A clearer way to learn. Pick up where you left off, or start something new.</p>
+          </div>
+        </div>
+        <section id="upload" class="upload-card">
+          <div class="upload-copy">
+            <div class="eyebrow">START WITH YOUR LECTURE</div>
+            <h2>Paste YouTube Lecture Link</h2>
+            <p>
+              Start with a YouTube lecture. We’ll organize the notes; you choose what to explore next.
+            </p>
+            <label class="language-picker" for="lectureLanguage">Notes language <select id="lectureLanguage"><option value="en">English</option><option value="hi">हिन्दी</option><option value="hinglish">Hinglish</option></select></label>
+            <label class="url-label" for="lectureUrl">YouTube lecture URL</label><div class="upload-actions">
+              <input
+                class="dashboard-input" type="url" aria-describedby="lectureDetection"
+                id="lectureUrl"
+                placeholder="https://youtube.com/watch?v=..."
+              /><button type="button" class="primary-btn" id="generateNotes">
+                Generate →
+              </button>
+            </div>
+            <p id="lectureDetection" class="lecture-detection" role="status">Paste a YouTube link to get started.</p><div id="processing" class="processing-box hidden">
+              <div>
+                <span id="processingLabel">Preparing your lecture…</span
+                ><strong id="progressPct">In progress</strong>
+              </div>
+              <div class="bar" role="progressbar" aria-label="Lecture processing"><i id="progressBar"></i></div><ol class="processing-steps"><li>Lecture received</li><li>Preparing transcript</li><li>Organizing notes</li></ol>
+            </div>
+          </div>
+          <div class="upload-visual" aria-hidden="true"><div class="lecture-illustration"><div class="illustration-top">LECTURE → CLARITY <span>✦</span></div><h3>Ideas worth<br>remembering.</h3><i></i><i></i><i></i><div class="illustration-tag">✓ A place for every insight</div></div></div>
+        </section>
+        <section class="saved-section" aria-labelledby="savedHeading"><h2 id="savedHeading">My Lectures</h2><div id="savedLectureCards" class="saved-lecture-grid" aria-live="polite"><p>Loading saved lectures…</p></div></section>
+        <div class="lecture-picker"><label for="savedLectures">Your saved lectures</label><select id="savedLectures"><option value="">Choose a lecture…</option></select></div>
+        <section id="resumeStudying" class="resume-card" hidden aria-label="Resume Studying">
+          <div><div class="eyebrow">CONTINUE LEARNING</div><h2 id="resumeTitle">Resume Studying</h2><p id="resumeProgress" role="status"></p></div>
+          <a id="resumeLink" class="primary-btn" href="dashboard.html">Resume →</a>
+        </section>
+        <div id="workspaceLoading" class="workspace-loading" role="status"><span>Loading your study space…</span><div class="loading-skeleton" aria-hidden="true"><i></i><i></i><i></i></div></div>
+
+        <section id="lectureWorkspace" class="lecture-workspace hidden">
+          <article class="lecture-header">
+            <div class="lecture-thumb">▶</div>
+            <div>
+              <span id="lectureStatus" class="status">Loading lecture…</span>
+              <h2 id="lectureTitle">Your lecture</h2>
+              <p id="lectureMeta"></p>
+            </div>
+          </article>
+          <div class="tools-heading"><div><div class="eyebrow">BUILT AROUND YOUR LECTURE</div><h2>Your study toolkit</h2></div><p>Understand. Practice. Make progress.</p></div><div class="tool-grid">
+            <article id="notes" class="tool-card">
+              <b>▤</b>
+              <h3>Notes</h3>
+              <p>Your key concepts, organized into clear, readable notes.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="notes">
+                Generate
+              </button>
+            </article>
+            <article id="summary" class="tool-card">
+              <b>▥</b>
+              <h3>Summary</h3>
+              <p>Quick revision of the lecture.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="summary">
+                Generate
+              </button>
+            </article>
+            <article id="flashcards" class="tool-card">
+              <b>◈</b>
+              <h3>Flashcards</h3>
+              <p>Active recall practice.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="flashcards">
+                Generate
+              </button>
+            </article>
+            <article id="mindmap" class="tool-card">
+              <b>◇</b>
+              <h3>Mind Map</h3>
+              <p>Visual concept connections.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="mindmap">
+                Generate
+              </button>
+            </article>
+            <article id="quiz" class="tool-card">
+              <b>ϟ</b>
+              <h3>Quiz</h3>
+              <p>Attempt and identify weak topics.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="quiz">
+                Generate
+              </button>
+            </article>
+            <article id="questions" class="tool-card">
+              <b>◎</b>
+              <h3>Important Questions</h3>
+              <p>Focus on high-value exam questions.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="questions">
+                Generate
+              </button>
+            </article>
+            <article id="weakTopics" class="tool-card"><b>↗</b><h3>Weak Topics</h3><p>Review the topics to revisit after your quiz.</p><button type="button" class="primary-btn" id="openWeakTopics" disabled>Complete Quiz first</button></article>
+            <article id="revision" class="tool-card">
+              <div class="tool-icon">✦</div><h3>Smart Revision</h3>
+              <p>Understand your weak topics with focused mini-notes from this lecture. Unlocks after Quiz completion.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="revision">Complete Quiz first</button>
+            </article>
+            <article id="retest" class="tool-card">
+              <div class="tool-icon">↻</div><h3>Re-test</h3>
+              <p>Practice your weak topics, compare improvement, and keep practicing after mastery. Unlocks after Smart Revision.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="retest">Generate Smart Revision first</button>
+            </article>
+            <article id="chat" class="tool-card">
+              <b>◌</b>
+              <h3>Chat with Lecture</h3>
+              <p>Explore an idea, ask for an example, or work through a question.</p>
+              <button type="button" class="primary-btn tool-generate" data-tool="chat">
+                Open Chat
+              </button>
+            </article>
+          </div>
+          <div id="generatedArea" class="generated-area" role="status" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+    <script src="js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/api.js"></script>
+    <script src="js/guard.js"></script>
+    <script src="js/workspace.js"></script><script src="js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "studygenie-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "models:list": "node scripts/list-models.js",
+    "dev:watch": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.19.0",
+    "@supabase/supabase-js": "^2.57.4",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

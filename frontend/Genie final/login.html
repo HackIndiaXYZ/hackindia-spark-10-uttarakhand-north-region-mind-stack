@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Login — StudyGenie</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("studygenieTheme") || "light";
+          document.documentElement.dataset.theme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  <link rel="stylesheet" href="css/refined.css">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<script defer src="js/ui.js"></script>
+</head>
+  <body class="auth-page">
+    <div class="bg-grid"></div>
+    <div class="glow glow-a"></div>
+    <div class="auth-wrap">
+      <a class="brand auth-brand" href="index.html"
+        ><img class="brand-mark" src="assets/logo-mark.svg" width="38" height="38" alt=""> StudyGenie</a
+      >
+      <div class="auth-grid">
+        <div class="auth-showcase"><div class="eyebrow">A LITTLE CLARITY. A LOT OF POSSIBILITY.</div><h1>Less replaying.<br>More <em>understanding.</em></h1><p>Turn your lectures into a thoughtful study routine. Clear notes, focused practice, and a little guidance when you need it.</p><div class="study-preview"><div class="preview-heading"><img src="assets/logo-mark.svg" alt="" width="32"><span>YOUR NEXT CHAPTER</span><span class="status">Ready to learn</span></div><h3>From lecture to lasting knowledge.</h3><div class="preview-path"><span>01 <b>Understand</b><small>Notes & key ideas</small></span><span>02 <b>Practice</b><small>One question at a time</small></span><span>03 <b>Improve</b><small>Revision that focuses</small></span></div><p>One lecture. Your own pace.</p></div><div class="auth-footnote">THOUGHTFULLY ORGANIZED · ALWAYS YOURS TO REVISIT</div></div><form class="auth-card" id="loginForm">
+          <h2>Welcome back</h2>
+          <p>Your lectures, notes, and next steps are waiting.</p>
+          <label
+            >Email<input
+              id="identifier" type="email" autocomplete="email"
+              required
+              placeholder="Email" /></label
+          ><label
+            >Password<input
+              type="password"
+              id="password" autocomplete="current-password"
+              required
+              placeholder="Enter your password"
+          /></label>
+          <div class="form-row">
+            <label class="check"><input type="checkbox" /> Remember me</label
+            ><a href="#" id="forgotPassword">Forgot password?</a>
+          </div>
+          <button class="primary-btn full" type="submit">
+            Login <span>→</span>
+          </button>
+          <div class="divider"><span>or</span></div>
+          <button type="button" class="google-btn full" id="googleLogin">
+            <b>G</b> Continue with Google
+          </button>
+          <p class="auth-switch">
+            New to StudyGenie? <a href="signup.html">Create an account</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <script src="js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

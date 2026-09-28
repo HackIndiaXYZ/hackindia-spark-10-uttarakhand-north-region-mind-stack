@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Settings — StudyGenie</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>(function () {try {var t = localStorage.getItem("studygenieTheme") || "light"; document.documentElement.dataset.theme = t;} catch (e) {document.documentElement.dataset.theme = "light";} })();</script>
+<link rel="stylesheet" href="css/refined.css">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<script defer src="js/ui.js"></script>
+</head>
+
+<body class="dashboard-page">
+  <header class="dashboard-nav"><a class="brand" href="index.html"><img class="brand-mark" src="assets/logo-mark.svg" width="38" height="38" alt=""> StudyGenie</a><a
+      class="secondary-btn" href="dashboard.html">← Dashboard</a></header>
+  <main class="content-page narrow">
+    <div class="eyebrow">ACCOUNT & PREFERENCES</div>
+    <h1>Settings</h1>
+    <p class="page-subtitle">Control your StudyGenie experience, privacy and study preferences.</p>
+    <div class="settings-shell">
+      <nav class="settings-nav"><a class="active" href="#account">Account</a><a href="#security">Security</a><a
+          href="#appearance">Appearance</a><a href="#study">Study preferences</a></nav>
+      <div>
+        <div id="account" class="settings-card settings-section">
+          <h3>Account information</h3><label>Name<input id="setName" placeholder="Your name"></label><label>Email<input
+              id="setEmail" type="email" placeholder="you@example.com"></label><label>Mobile number<input id="setMobile"
+              placeholder="+91..."></label>
+        </div>
+        <div id="security" class="settings-card settings-section">
+          <h3>Security</h3><label>New password<input type="password" id="newPassword"
+              placeholder="Create a new password"></label>
+          <p class="muted">Password changes are handled securely by the authentication provider.</p><button class="primary-btn" type="button" id="saveSecurity">Update password</button><p class="muted" id="settingsMessage"></p>
+        </div>
+        <div id="appearance" class="settings-card settings-section">
+          <h3>Appearance</h3>
+          <p class="muted">Choose how StudyGenie looks across the app.</p>
+          <div class="choice-row settings-choices"><button type="button" data-theme="dark">☾ Deep Navy</button><button type="button"
+              data-theme="light">☀ Warm Cream</button></div>
+        </div>
+        <div id="study" class="settings-card settings-section">
+          <h3>Study preferences</h3><label>Quiz difficulty<select id="difficulty">
+              <option>Balanced</option>
+              <option>Easy</option>
+              <option>Hard</option>
+            </select></label><label class="toggle"><input id="studyReminder" type="checkbox" checked> Study
+            reminders</label><label class="toggle"><input id="quizReminder" type="checkbox" checked> Quiz
+            reminders</label>
+        </div>
+      </div><button type="button" class="primary-btn" id="saveProfile">Save Changes</button>
+      <div id="saveMsg" class="note-callout hidden">✓ Settings saved successfully.</div>
+    </div>
+  </main>
+  <script src="js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/api.js"></script>
+    <script src="js/guard.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+
+</html>

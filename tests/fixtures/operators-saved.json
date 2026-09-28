@@ -1,0 +1,83 @@
+[
+  {
+    "feature_type": "mindmap",
+    "content_text": null,
+    "content_json": {
+      "central": "Operators in C Programming",
+      "branches": [
+        {
+          "topic": "Introduction to Operators",
+          "children": [
+            "Definition of Operator (Symbol used to perform operations)",
+            "Operands (Values on which operators perform operations)",
+            "Role of CodeRunner extension in Visual Studio Code"
+          ]
+        },
+        {
+          "topic": "Arithmetic Operators",
+          "children": [
+            "Addition (+)",
+            "Subtraction (-)",
+            "Multiplication (*)",
+            "Division (/ - returns integer if operands are integers)",
+            "Modulus (% - returns remainder)"
+          ]
+        },
+        {
+          "topic": "Relational Operators",
+          "children": [
+            "Used in control statements and if-else conditions",
+            "Evaluates conditions to true (non-zero/1) or false (zero/0)"
+          ]
+        },
+        {
+          "topic": "Logical Operators",
+          "children": [
+            "Logical AND (&&)",
+            "Logical OR (||)",
+            "Logical NOT (!)"
+          ]
+        },
+        {
+          "topic": "Bitwise Operators",
+          "children": [
+            "Works on binary bits",
+            "Bitwise AND",
+            "Bitwise OR",
+            "Bitwise XOR",
+            "Binary Right Shift"
+          ]
+        },
+        {
+          "topic": "Assignment Operators",
+          "children": [
+            "Simple Assignment (=)",
+            "Add and Assignment (+=)",
+            "Multiply and Assignment (*=)",
+            "Divide and Assignment (/=)"
+          ]
+        },
+        {
+          "topic": "Miscellaneous Operators",
+          "children": [
+            "Sizeof operator (returns size of data type/variable based on architecture)",
+            "Address of operator (&)"
+          ]
+        },
+        {
+          "topic": "Operator Precedence & Associativity",
+          "children": [
+            "Defines the order of evaluation in expressions",
+            "Associativity determines grouping of operators with the same precedence in the absence of parentheses",
+            "Using parentheses is recommended to control evaluation order clearly"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "feature_type": "notes",
+    "content_text": "# Operators in C Programming\n\n## Introduction to the Environment\nTo write and run C programs efficiently, we use **Visual Studio Code (VS Code)** as our primary code editor. \n* To run C code instantly with a single click, we use an extension in VS Code called **Code Runner**. \n* Once installed, it adds a play/run button to the top-right corner of the editor, allowing us to execute programs without manually typing compilation commands in the terminal.\n\n---\n\n## What is an Operator?\n\nAn **Operator** is a symbol that tells the computer to perform specific mathematical or logical manipulations on data. The data values that these operators work upon are called **operands**.\n\n### Example\nIn the expression:\n$$\\mathbf{4 + 3 = 7}$$\n\n* **`+`** is the **Operator** (Addition symbol).\n* **`4`** and **`3`** are the **Operands**.\n* **`7`** is the resulting output.\n\n---\n\n## Types of Operators in C\n\nC programming supports several types of operators to perform different kinds of operations:\n1. Arithmetic Operators\n2. Relational Operators\n3. Logical Operators\n4. Bitwise Operators\n5. Assignment Operators\n6. Miscellaneous Operators\n\n---\n\n### 1. Arithmetic Operators\nArithmetic operators are used to perform basic mathematical calculations.\n\n| Operator | Meaning | Example ($a=34, b=6$) | Result |\n| :---: | :--- | :--- | :--- |\n| **`+`** | Addition | `a + b` | $40$ |\n| **`-`** | Subtraction | `a - b` | $28$ |\n| **`*`** | Multiplication | `a * b` | $204$ |\n| **`/`** | Division | `a / b` | $5$ (Integer division truncates decimals) |\n| **`%`** | Modulus (Remainder) | `a % b` | $4$ (Since $34 = 6 \\times 5 + \\mathbf{4}$) |\n\n#### Important Behaviors of Arithmetic Operators:\n* **The Modulus Operator (`%`):** This operator returns the division remainder.\n  * **Example 1:** `8 % 2` returns `0` because 2 divides 8 perfectly with no remainder.\n  * **Example 2:** `8 % 3` returns `2` because 3 goes into 8 twice ($3 \\times 2 = 6$) with a remainder of `2`.\n* **Integer vs. Floating-Point Division:** \n  * If both operands are integers, C performs **integer division** and drops any decimal remainder (e.g., `34 / 6` returns `5` instead of `5.66`).\n  * If we want a precise decimal result, at least one of our operands must be a floating-point number (e.g., `34 / 6.5`), and we must print it using the float format specifier (`%f`).\n\n---\n\n### 2. Relational Operators\nRelational operators are used to compare two values. They are highly important for conditional structures (like **`if` statements**).\n\n* **Equality Operator (`==`):** Checks if the values of two operands are equal.\n  * If the values are equal, the condition becomes true and returns **`1`**.\n  * If the values are not equal, the condition becomes false and returns **`0`**.\n\n> **Important:** In C, there is no built-in boolean type in standard basic operations; **`0`** represents **False**, and **`1`** (or any non-zero value) represents **True**.\n\n---\n\n### 3. Logical Operators\nLogical operators are used to combine multiple conditions or to reverse a condition's logical state.\n\n* **Logical AND (`&&`):** Returns true (`1`) only if **both** operands/conditions are non-zero (true). If either operand is `0` (false), it returns `0`.\n* **Logical OR (`||`):** Returns true (`1`) if **at least one** operand/condition is non-zero (true). It returns `0` (false) only when both operands are `0`.\n* **Logical NOT (`!`):** Reverses the logical state of its operand. \n  * If a variable is true (non-zero), `!` makes it false (`0`).\n  * If a variable is false (`0`), `!` makes it true (`1`).\n  * **Example:** If variable `B = 0`, then expression `!B` will evaluate to `1`.\n\n---\n\n### 4. Bitwise Operators\n**Bitwise operators** perform calculations directly on the binary representations (bits) of numbers. Because computers store and process data in binary, bitwise operations are executed extremely fast and are highly useful for optimizing the performance and **time complexity** of algorithms.\n\n#### Binary Representations of Numbers (0 to 3)\nTo understand bitwise operations, we must first look at how decimal numbers are represented in binary (using 2 bits):\n\n| Decimal | Binary Equivalent |\n| :--- | :--- |\n| **0** | `00` |\n| **1** | `01` |\n| **2** | `10` |\n| **3** | `11` |\n\n#### Key Bitwise Operators\n\n* **A. Bitwise AND (`&`):** The result is `1` only if both corresponding bits are `1`. If either bit is `0`, the result is `0`.\n  * **Example:** Let's calculate **`2 & 3`** (Bitwise AND of 2 and 3).\n    * Binary of $2 = 10$\n    * Binary of $3 = 11$\n    $$\\begin{array}{rcc}\n    & 1 & 0 \\quad (\\text{Binary of } 2) \\\\\n    \\& & 1 & 1 \\quad (\\text{Binary of } 3) \\\\\n    \\hline\n    \\text{Result:} & 1 & 0 \\quad (\\text{Binary of } 2)\n    \\end{array}$$\n  * **Output of `2 & 3`:** `2`\n\n* **B. Bitwise OR (`|`):** The result is `1` if at least one of the corresponding bits is `1`. It returns `0` only when both bits are `0`.\n  * **Example:** Let's calculate **`2 | 3`** (Bitwise OR of 2 and 3).\n    * Binary of $2 = 10$\n    * Binary of $3 = 11$\n    $$\\begin{array}{rcc}\n    & 1 & 0 \\quad (\\text{Binary of } 2) \\\\\n    | & 1 & 1 \\quad (\\text{Binary of } 3) \\\\\n    \\hline\n    \\text{Result:} & 1 & 1 \\quad (\\text{Binary of } 3)\n    \\end{array}$$\n  * **Output of `2 | 3`:** `3`\n\n* **C. Bitwise XOR (`^`):** The result is `1` if the two bits are different (one is `1` and the other is `0`). If both bits are the same (both `0` or both `1`), the result is `0`.\n  * **Example:** Let's calculate **`2 ^ 3`** (Bitwise XOR of 2 and 3).\n    * Binary of $2 = 10$\n    * Binary of $3 = 11$\n    $$\\begin{array}{rcc}\n    & 1 & 0 \\quad (\\text{Binary of } 2) \\\\\n    \\wedge & 1 & 1 \\quad (\\text{Binary of } 3) \\\\\n    \\hline\n    \\text{Result:} & 0 & 1 \\quad (\\text{Binary of } 1)\n    \\end{array}$$\n  * **Output of `2 ^ 3`:** `1`\n\n* **D. Bitwise Right Shift (`>>`) & Left Shift (`<<`):**\n  * **Right Shift (`>>`):** Shifts the bits of a number to the right by a specified number of positions. Shifting bits to the right by $n$ positions is equivalent to dividing the number by $2^n$ (using integer division).\n  * **Left Shift (`<<`):** Shifts binary bits to the left by $n$ positions, which is equivalent to multiplying the number by $2^n$.\n\n---\n\n### 5. Assignment Operators\nAssignment operators are used to assign values to variables. They are present in almost every production-level program.\n\n* **Simple Assignment (`=`):** Assigns the value on the right side of the operator to the variable on the left side.\n  ```cpp\n  int z = 7; // The value 7 is assigned to variable z\n  ```\n* **Compound Assignment Operators:** These operators combine an arithmetic operation with an assignment.\n  * **Add and Assign (`+=`):** Adds the right-side value to the left-side variable and stores the result back in the left-side variable.\n    ```cpp\n    // Suppose a starts with a value of 7\n    a += 1; // This is equivalent to: a = a + 1\n    // Now, the value of a is 8\n    ```\n  * **Multiply and Assign (`*=`):** Multiplies the variable by the right-side value and assigns the result.\n  * **Divide and Assign (`/=`):** Divides the variable by the right-side value and assigns the result.\n\n---\n\n### 6. Miscellaneous Operators\n\n* **`sizeof` Operator:** Returns the size (in bytes) of a data type or variable. The exact value returned depends on the **system architecture** (the machine's processor and compiler setup). For example, on standard modern architectures, `sizeof(int)` typically returns `4` bytes.\n* **Address-of Operator (`&`):** Returns the exact memory address where a variable is stored. This operator is foundational when working with **pointers** (variables that store memory addresses of other variables).\n\n---\n\n## C Code Implementation Example\n\nThis program demonstrates how arithmetic, relational, and logical operators behave inside C:\n\n```c\n#include <stdio.h>\n\nint main() {\n    int a = 34;\n    int b = 0;      // b is 0 (Logical False)\n    float c = 6.5;  // Floating-point number\n    \n    // Arithmetic Operator Examples\n    printf(\"--- Arithmetic Operators ---\\n\");\n    printf(\"Addition (a + c): %f\\n\", a + c);\n    printf(\"Multiplication (a * c): %f\\n\", a * c);\n    \n    // Integer division vs Float division\n    printf(\"Integer division (34 / 6): %d\\n\", 34 / 6); \n    printf(\"Float division (34 / 6.5): %f\\n\", a / c);\n    \n    // Relational Operator Example\n    printf(\"\\n--- Relational Operators ---\\n\");\n    printf(\"Is a equal to b? (a == b): %d\\n\", a == b); // Will print 0 (False)\n    \n    // Logical Operator Examples\n    printf(\"\\n--- Logical Operators ---\\n\");\n    // Logical OR: Returns 1 because 'a' (34) is non-zero (true)\n    printf(\"Logical OR (a || b): %d\\n\", a || b); \n    \n    // Logical AND: Returns 0 because 'b' (0) is zero (false)\n    printf(\"Logical AND (a && b): %d\\n\", a && b); \n    \n    // Logical NOT: Reverses 'b' (since b is 0, !b becomes 1)\n    printf(\"Logical NOT (!b): %d\\n\", !b); \n    \n    return 0;\n}\n```\n\n### Expected Console Output\n```text\n--- Arithmetic Operators ---\nAddition (a + c): 40.500000\nMultiplication (a * c): 221.000000\nInteger division (34 / 6): 5\nFloat division (34 / 6.5): 5.230769\n\n--- Relational Operators ---\nIs a equal to b? (a == b): 0\n\n--- Logical Operators ---\nLogical OR (a || b): 1\nLogical AND (a && b): 0\nLogical NOT (!b): 1\n```\n\n---\n\n## Operator Precedence and Associativity\n\nWhen a single mathematical or logical expression contains multiple operators, we need a set of rules to decide which operator is evaluated first.\n\n* **Precedence in Programming:** Programming languages use an **Operator Precedence Table** to determine the execution order. If two operators have different precedence levels, the operator with the higher precedence is executed first.\n* **Associativity:** When two operators in an expression have the exact same precedence level, **associativity** determines whether we evaluate the expression from **Left-to-Right** or **Right-to-Left**.\n  * Most operators (such as arithmetic `+`, `-`, `*`, `/` and bitwise `&`, `|`, `^`) associate from **Left to Right**.\n  * Assignment operators (`=`, `+=`, `*=`, etc.) and unary operators associate from **Right to Left**.\n  * **Example:** `1 + 2 - 3`\n    * Both addition (`+`) and subtraction (`-`) have the same precedence and associate Left-to-Right.\n    * **Evaluation steps:** First calculate left-most operation ($1 + 2 = 3$), then resolve the next step ($3 - 3 = 0$).\n\n> **Important:** You do not need to memorize the entire precedence table! In practical programming, you should focus on writing clear logic. The best way to control the evaluation order is to use **parentheses `()`**. Parentheses have the highest precedence, making your code easier to read and preventing bugs.\n\n---\n\n## Additional Important Information\n\n### Format Specifiers in C\nWhen using the `printf()` function, we must tell the compiler what type of data we want to display using **format specifiers**:\n* **`%d`** is used for printing **integers** (whole numbers like `34`, `6`, `0`).\n* **`%f`** is used for printing **floating-point numbers** (numbers with decimals like `6.5`).\n\n### Other Relational Operators\nWhile the lecture focused heavily on the equality check (`==`), C also includes other standard comparison operators:\n* `!=` (Not Equal to)\n* `>` (Greater than)\n* `<` (Less than)\n* `>=` (Greater than or equal to)\n* `<=` (Less than or equal to)\n\n---\n\n## Important Keywords\n\n* **Operator:** A special symbol used to perform specific arithmetic or logical computations.\n* **Operand:** The data variable or value upon which an operator performs its calculation.\n* **Modulus (`%`):** An operator that returns the remainder of an integer division.\n* **Format Specifier:** A special placeholder used in formatting output (e.g., `%d` for integers, `%f` for decimals).\n* **Integer Division:** Division between two whole numbers that truncates the fractional part, keeping only the integer quotient.\n* **Non-Zero Value:** Any numerical value other than `0`. In C, any non-zero value is logically evaluated as **True**.\n* **Bitwise Operator:** An operator that performs operations on data at the individual bit level.\n* **Binary Equivalent:** The representation of a base-10 (decimal) number in base-2 (0s and 1s).\n* **Assignment Operator:** An operator used to store a value or the result of an expression into a variable.\n* **Compound Assignment:** A shorthand operator that combines an arithmetic operation with assignment (e.g., `+=`).\n* **`sizeof`:** A unary operator that yields the size of its operand in bytes.\n* **Precedence:** The rule that determines which operator is evaluated first in an expression.\n* **Associativity:** The order (Left-to-Right or Right-to-Left) in which operators of equal precedence are processed.",
+    "content_json": null
+  }
+]

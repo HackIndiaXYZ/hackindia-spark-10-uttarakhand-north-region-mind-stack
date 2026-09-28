@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Profile — StudyGenie</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("studygenieTheme") || "light";
+          document.documentElement.dataset.theme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  <link rel="stylesheet" href="css/refined.css">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<script defer src="js/ui.js"></script>
+</head>
+  <body class="dashboard-page">
+    <header class="dashboard-nav">
+      <a class="brand" href="index.html"
+        ><img class="brand-mark" src="assets/logo-mark.svg" width="38" height="38" alt=""> StudyGenie</a
+      >
+      <div class="dash-actions">
+        <button type="button" class="icon-btn" id="profileTheme">☾</button
+        ><a class="secondary-btn" href="dashboard.html">← Dashboard</a>
+      </div>
+    </header>
+    <main class="content-page narrow">
+      <div class="eyebrow">YOUR PROFILE</div>
+      <h1>Profile</h1>
+      <div class="settings-card profile-hero-card">
+        <div class="avatar avatar-large" id="profileAvatar">S</div>
+        <div>
+          <h2 id="profileNameLarge">Student</h2>
+          <p id="profileContact" class="muted">Email / mobile</p>
+          <p class="muted">StudyGenie learner</p>
+        </div>
+        <a class="primary-btn" href="settings.html#account">Edit Profile</a>
+      </div>
+      <div class="profile-stat-grid">
+        <div class="profile-stat">
+          <small>Lectures processed</small><strong id="lectureCount">0</strong>
+        </div>
+        <div class="profile-stat">
+          <small>Study tools generated</small><strong id="toolCount">0</strong>
+        </div>
+        <div class="profile-stat">
+          <small>Latest quiz score</small><strong id="quizScore">—</strong>
+        </div>
+      </div>
+      <div class="settings-card settings-section" style="margin-top: 22px">
+        <h3>Learning overview</h3>
+        <p class="muted">
+          Your profile keeps your account information separate from app
+          settings. Use Settings for preferences, appearance and security.
+        </p>
+        <div class="help-list">
+          <div class="help-item">
+            <b>Account</b>
+            <p>Update your profile details in Settings.</p>
+          </div>
+          <div class="help-item">
+            <b>Study style</b>
+            <p>Choose quiz difficulty and reminder preferences.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/api.js"></script>
+    <script src="js/guard.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>
