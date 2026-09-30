@@ -1,7 +1,5 @@
 const StudyGenieAPI = (() => {
-  const API_BASE =
-    window.STUDYGENIE_API_BASE_URL ||
-    "https://hackindia-spark-10-uttarakhand-north.onrender.com";
+  const API_BASE = window.STUDYGENIE_API_BASE_URL || "http://localhost:4000";
   let configPromise;
   const loadConfig = async () => {
     if (!configPromise) {
