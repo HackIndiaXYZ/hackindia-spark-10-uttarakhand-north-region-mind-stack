@@ -1,3 +1,0 @@
-# Python 3.11 recommended; lock installed versions after validating your platform.
-yt-dlp[default]
-faster-whisper>=1.2.0,<2
